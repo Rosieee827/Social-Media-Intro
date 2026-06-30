@@ -262,15 +262,15 @@ body {
 
 .track-info {
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .track-title {
   font-size: 15px;
   font-weight: bold;
   color: #c9184a;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .track-artist {
