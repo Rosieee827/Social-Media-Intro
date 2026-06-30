@@ -1,78 +1,350 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Social Media Intro!</title>
-<!-- BS SETUP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Media Intro!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-<!-- CSS SETUP -->
     <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
-<div class="container">
-    <h1><strong>˚⁺༝꒰ྀིྀི১ ᴀʙᴏᴜᴛ ᴍᴇ ໒꒱ིྀ༝⁺˚</strong></h1>
-    
-    <section class="card about-me">
-      <p><strong>˗ˏˋ ★ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴘʀᴏꜰɪʟᴇ ᴉᴉ ɪ'ᴍ ᴊᴀɪʏᴀɴᴀʜ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴄᴀʟʟ ᴍᴇ ᴊᴀɪ, ʏᴀɴᴀʜ, ʀᴀᴇ, ᴏʀ ʀᴏꜱᴇ (≧∇≦) ★ ˎˊ˗</strong></p>
-      <p>ᛝʜᴇʀᴇ'ꜱ ꜱᴏᴍᴇ ᴛʜɪɴɢꜱ ᴀʙᴏᴜᴛ ᴍᴇ:</p>
+
+  <div id="device-selector" class="selector-screen">
+    <div class="selector-content text-center">
+      <h2>˚⁺༝꒰ྀིྀི১ 𝓒ʜᴏᴏꜱᴇ ᴀ 𝓓ᴇᴠɪᴄᴇ 𝓥ɪᴇᴡ ໒꒱ིྀ༝⁺˚</h2>
+      <p>⋆⑅˚₊ ꜱᴇʟᴇᴄᴛ ʜᴏᴡ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘᴏʀᴛʀᴀʏ ᴍʏ ᴘʀᴏꜰɪʟᴇ ᵎᵎ</p>
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
+        <button class="btn btn-select" onclick="setDevice('phone')">📱 ᴘʜᴏɴᴇ ᴠɪᴇᴡ ⠀ೀ</button>
+        <button class="btn btn-select" onclick="setDevice('ipad')">📟 ᴛᴀʙʟᴇᴛ/ɪᴘᴀᴅ ᴠɪᴇᴡ ⠀ೀ</button>
+        <button class="btn btn-select" onclick="setDevice('desktop')">💻 ᴅᴇꜱᴋᴛᴏᴘ ᴠɪᴇᴡ ⠀ೀ</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="webpage-container" class="main-wrapper d-none">
+    <div id="device-frame">
+      
+      <div class="desktop-top-bar">
+        <div class="left-menu"> <b>Finder</b> ꜰɪʟᴇ | ᴇᴅɪᴛ | ᴠɪᴇᴡ | ʜɪꜱᴛᴏʀʏ | ʙᴏᴏᴋᴍᴀʀᴋꜱ | ᴡɪɴᴅᴏᴡ | ʜᴇʟᴘ</div>
+        <div id="live-desktop-clock" class="right-menu">0:00 PM 𐙚 📶 🔋</div>
+      </div>
+      
+      <div class="device-ui-header">
+        <div class="dynamic-island"></div>
+        <div class="status-bar">
+          <span id="live-clock" class="time">0:00 𐙚</span>
+          <span class="icons">📶 🔋</span>
+        </div>
+      </div>
+
+      <div class="screen-content">
+        <h1 class="header-title"><strong>˚⁺༝꒰ྀིྀི১ ꜱᴏᴄɪᴀʟ ᴍᴇᴅɪᴀ ɪɴᴛʀᴏ ໒꒱ིྀ༝⁺˚</strong></h1>
+
+        <div class="apps-grid">
+          <div class="app-icon-wrapper" onclick="openModal('about-me-modal')">
+            <div class="app-square app-thumb-columbina"></div>
+            <span class="app-label">𝓐ʙᴏᴜᴛ 𝓜ᴇ ⁺໒꒱ིྀ༝</span>
+          </div>
+
+          <div class="app-icon-wrapper" onclick="openModal('dni-modal')">
+            <div class="app-square app-thumb-mymelody"></div>
+            <span class="app-label">𝓓ɴɪ 𝓛ɪꜱᴛ ⁺໒꒱ིྀ༝</span>
+          </div>
+
+          <div class="app-icon-wrapper" onclick="openModal('likes-modal')">
+            <div class="app-square app-thumb-heart"></div>
+            <span class="app-label">𝓛ɪᴋᴇꜱ ⁺໒꒱ིྀ༝</span>
+          </div>
+
+          <div class="app-icon-wrapper" onclick="openModal('dislikes-modal')">
+            <div class="app-square app-thumb-parasol"></div>
+            <span class="app-label">𝓓ɪꜱʟɪᴋᴇꜱ ⁺໒꒱ིྀ༝</span>
+          </div>
+
+          <div class="app-icon-wrapper" onclick="openModal('accounts-modal')">
+            <div class="app-square app-thumb-carousel"></div>
+            <span class="app-label">𝓐ᴄᴄᴏᴜɴᴛꜱ ⁺໒꒱ིྀ༝</span>
+          </div>
+        </div>
+
+        <div class="custom-music-player">
+          <audio id="main-audio" src=""></audio>
+          <div class="player-layout">
+            <div class="player-cover-wrapper">
+              <img id="player-cover" src="https://i.pinimg.com/736x/dc/d5/bb/dcd5bb1f23ee068e51adc141c01f87b9.jpg" alt="Cover Art">
+            </div>
+            
+            <div class="player-details">
+              <div class="track-info">
+                <div id="player-title" class="track-title">Otomodachi</div>
+                <div id="player-artist" class="track-artist">Phantom Siita</div>
+              </div>
+
+              <div class="progress-container mb-2">
+                <input type="range" id="audio-slider" min="0" max="100" value="0" style="width: 100%; accent-color: #ffb3c1;">
+                <div class="time-display d-flex justify-content-between" style="font-size: 11px; color: #666; margin-top: 2px;">
+                  <span id="current-time">0:00</span>
+                  <span id="total-duration">0:00</span>
+                </div>
+              </div>
+              
+              <div class="player-controls">
+                <button class="control-btn" onclick="prevTrack()">⏮</button>
+                <button id="play-trigger-btn" class="control-btn play-main" onclick="togglePlayback()">▶</button>
+                <button class="control-btn" onclick="nextTrack()">⏭</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottom-dock">
+        <div class="dock-container" id="dynamic-dock-target"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="about-me-modal" class="app-modal" onclick="closeModal(event, 'about-me-modal')">
+    <div class="modal-card">
+      <span class="close-btn" onclick="document.getElementById('about-me-modal').style.display='none'">×</span>
+      <h2 class="text-center mb-3"><strong>˚⁺༝꒰ྀིྀི১ ᴀʙᴏᴜᴛ ᴍᴇ ໒꒱ིྀ༝⁺˚</strong></h2>
+      <p><strong><b>˗ˏˋ ★ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴍʏ ᴘʀᴏꜰɪʟᴇ ᴉᴉ ɪ'ᴍ ᴊᴀɪʏᴀɴᴀʜ ʙᴜᴛ ʏᴏᴜ ᴄᴀɴ ᴄᴀʟʟ ᴍᴇ ᴊᴀɪ, ʏᴀɴᴀʜ, ʀᴀᴇ, ᴏʀ ʀᴏꜱᴇ (≧∇≦) ★ ˎˊ˗</b></strong></p>
+      <p>ᛝ ʜᴇʀᴇ'ꜱ ꜱᴏᴍᴇ ᴛʜɪɴɢꜱ ᴀʙᴏᴜᴛ ᴍᴇ:</p>
       <ul>
         <li>ɪ'ᴍ 15 ⊹</li>
         <li>ɪ ɢᴏ ʙʏ ꜱʜᴇ/ʜᴇʀ ᴘʀᴏɴᴏᴜɴꜱ ⊹</li>
-        <li>ᴍʏ ʙɪʀᴛʜᴅᴀʏ: ᴀᴜɢᴜꜱᴛ 27, 2010 ⊹</li>
+        <li>ᴍʏ ʙɪʀᴛʜᴅᴀʏ: ᴀᴜɢᴜꜱᴛ 27, 2010</li>
         <li>ᴢᴏᴅɪᴀᴄ ꜱɪɢɴ: ᴠɪʀɢᴏ ⊹</li>
         <li>ɪ'ᴍ ᴀ ᴋᴜꜱᴀɴᴀɢɪ ɴᴇɴᴇ ᴀɴᴅ ᴄᴏʟᴜᴍʙɪɴᴀ ᴋɪɴɴɪᴇ ⊹</li>
-		<li>ʜᴀɪɴᴇ & ᴍᴏɴᴀ ᴏꜱʜɪ (ᴘʜᴀɴᴛᴏᴍ ꜱɪɪᴛᴀ) ⊹</li>
-		<li>ʙʟɪɴᴋ ᴀɴᴅ ᴊɪꜱᴏᴏ ꜱᴛᴀɴ (ʙʟᴀᴄᴋᴘɪɴᴋ) ⊹</li>
-		<li> ɢʀᴀᴛᴇꜰᴜʟ ꜰᴏʀ ᴊ, ꜱ, ᴀɴᴅ ᴢ <3 ⊹</li>
+        <li>ʜᴀɪɴᴇ & ᴍᴏɴᴀ ᴏꜱʜɪ (ᴘʜᴀɴᴛᴏᴍ ꜱɪɪᴛᴀ) ⊹</li>
+        <li>ʙʟɪɴᴋ ᴀɴᴅ ᴊɪꜱᴏᴏ ꜱᴛᴀɴ (ʙʟᴀᴄᴋᴘɪɴᴋ) ⊹</li>
+        <li>ɢʀᴀᴛᴇꜰᴜʟ ꜰᴏʀ ᴊ, ꜱ, ᴀɴᴅ ᴢ <3 ⊹</li>
       </ul>
-    </section>
-
-    <div class="flex-row">
-      <section class="card dni">
-        <h2><strong>𐙚ᴅɴɪ ʟɪꜱᴛ ᵎᵎ</strong></h2>
-        <ul>
-          <li>ᴘᴇᴅᴏᴘʜɪʟᴇꜱ ⊹</li>
-          <li>ꜱᴇxɪꜱᴛꜱ ⊹</li>
-          <li>ʀᴀᴄɪꜱᴛꜱ ⊹</li>
-		  <li>ʜᴏᴍᴏᴘʜᴏʙᴇꜱ ⊹</li>
-		  <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ʀᴏᴍᴀɴᴛɪᴄɪᴢᴇ ᴏʀ ɢʟᴏʀɪꜰʏ ᴍᴇɴᴛᴀʟ ɪʟʟɴᴇꜱꜱ, ᴀʙᴜꜱᴇ, ᴇᴛᴄ. ⊹</li>
-          <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴅᴇꜰᴇɴᴅ ᴏʀ ᴇxᴄᴜꜱᴇ ᴘʀᴇᴅᴀᴛᴏʀʏ ʙᴇʜᴀᴠɪᴏʀ ⊹</li>
-          <li>ᴛᴄᴏᴀᴀʟ ꜰᴀɴꜱ (ɪꜰ ʏᴏᴜ’ʀᴇ ɪɴᴛᴏ ꜱᴏᴍᴇᴛʜɪɴɢ ᴛʜᴀᴛ ᴅɪꜱɢᴜꜱᴛɪɴɢ, ʏᴏᴜ ꜱᴇʀɪᴏᴜꜱʟʏ ɴᴇᴇᴅ ʜᴇʟᴘ) ⊹</li>
-		  <li>ʜᴀᴢʙɪɴ ʜᴏᴛᴇʟ ᴀɴᴅ ʜᴇʟʟᴜᴠᴀ ʙᴏꜱꜱ ꜰᴀɴꜱ (ᴢ'ꜱ ᴀɴ ᴇxᴄᴇᴘᴛɪᴏɴ) ⊹</li>
-        </ul>
-      </section>
-
-      <section class="card likes-dislikes">
-        <h2><strong>𐙚ʟɪᴋᴇꜱ ᵎᵎ</strong></h2>
-        <ul>
-          <li>ᴘʟᴀʏɪɴɢ ʙᴀᴅᴍɪɴᴛᴏɴ ⊹</li>
-          <li>ɢᴀᴍɪɴɢ (ɪ ᴘʟᴀʏ ʀᴏʙʟᴏx, ɢᴇɴꜱʜɪɴ ɪᴍᴘᴀᴄᴛ, ᴀɴᴅ ᴘʀᴏᴊᴇᴄᴛ ꜱᴇᴋᴀɪ) ⊹</li>
-          <li>ʀᴇᴀᴅɪɴɢ ⊹</li>
-          <li>ʟɪꜱᴛᴇɴɪɴɢ ᴛᴏ ᴍᴜꜱɪᴄ (ᴍᴏꜱᴛ ᴏꜰ ᴛʜᴇ ꜱᴏɴɢꜱ ɪ ʟɪꜱᴛᴇɴ ᴛᴏ ᴀʀᴇ ꜰʀᴏᴍ ᴘʜᴀɴᴛᴏᴍ ꜱɪɪᴛᴀ, ᴀᴅᴏ, ꜱʜᴇᴇɴᴀ ʀɪɴɢᴏ, ᴍᴀʟɪᴄᴇ ᴍɪᴢᴇʀ, ᴏʀ ᴠᴏᴄᴀʟᴏɪᴅ) ⊹</li>
-          <li>ᴄᴏʟʟᴇᴄᴛɪɴɢ ꜰɪɢᴜʀᴇꜱ (ᴍɪᴋᴜ ꜰɪɢᴜʀᴇꜱ, ꜱᴀɴʀɪᴏ ꜰɪɢᴜʀɪɴᴇꜱ, ᴏʀ ꜰɪɢᴜʀᴇꜱ ᴏꜰ ᴍʏ ꜰᴀᴠ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ) ⊹</li>
-          <li>ᴡᴀᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ (ɪ ʟᴏᴠᴇᴇᴇᴇ ʀᴏᴍᴀɴᴄᴇ ᴀɴɪᴍᴇꜱ) ⊹</li>
-        </ul>
-        <h2><strong>𐙚ᴅɪꜱʟɪᴋᴇꜱ ᵎᵎ</strong></h2>
-        <ul>
-          <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ʀᴇᴀᴅ ᴍʏ ᴛᴇxᴛꜱ ʙᴜᴛ ᴛʜᴇʏ ᴅᴏɴ'ᴛ ʀᴇᴘʟʏ ⊹</li>
-          <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴀꜱᴋ ꜰᴏʀ ᴀᴅᴠɪᴄᴇ ʙᴜᴛ ᴇxᴘᴇᴄᴛ ᴍᴇ ᴛᴏ ꜱᴜɢᴀʀᴄᴏᴀᴛ ᴇᴠᴇʀʏᴛʜɪɴɢ ɪɴꜱᴛᴇᴀᴅ ᴏꜰ ʙᴇɪɴɢ ʜᴏɴᴇꜱᴛ (ᴛʜɪꜱ ɪꜱ ᴛᴀʀɢᴇᴛᴇᴅ ᴛᴏ ꜱᴏᴍᴇᴏɴᴇ) ⊹</li>
-          <li>ᴘᴇᴏᴘʟᴇ ᴛᴀʟᴋɪɴɢ ᴏᴠᴇʀ ᴍᴇ ɪɴ ᴄᴏɴᴠᴇʀꜱᴀᴛɪᴏɴꜱ ⊹</li>
-		  <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴀʀᴇ ʙᴇɪɴɢ ʟᴏᴜᴅ ʙᴜᴛ ᴄᴀɴ’ᴛ ꜱᴛᴀɴᴅ ɪᴛ ᴡʜᴇɴ ᴏᴛʜᴇʀꜱ ᴅᴏ ᴛʜᴇ ꜱᴀᴍᴇ (ᴛʜɪꜱ ɪꜱ ᴛᴀʀɢᴇᴛᴇᴅ ᴛᴏ ꜱᴏᴍᴇᴏɴᴇ ᴛᴏᴏ) ⊹</li>
-        </ul>
-      </section>
     </div>
+  </div>
 
-    <section class="card accounts">
-      <center><h2><strong>˚₊‧ 𓊆ᴍʏ ᴀᴄᴄᴏᴜɴᴛꜱ𓊇 ‧₊˚</strong></h2>
+  <div id="dni-modal" class="app-modal" onclick="closeModal(event, 'dni-modal')">
+    <div class="modal-card">
+      <span class="close-btn" onclick="document.getElementById('dni-modal').style.display='none'">×</span>
+      <h2><strong>𐙚 ᴅɴɪ ʟɪꜱᴛ ᵎᵎ</strong></h2>
+      <ul>
+        <li>ᴘᴇᴅᴏᴘʜɪʟᴇꜱ ⊹</li>
+        <li>ꜱᴇxɪꜱᴛꜱ ⊹</li>
+        <li>ʀᴀᴄɪꜱᴛꜱ ⊹</li>
+        <li>ʜᴏᴍᴏᴘʜᴏʙᴇꜱ ⊹</li>
+        <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ʀᴏᴍᴀɴᴛɪᴄɪᴢᴇ ᴏʀ ɢʟᴏʀɪꜰʏ ᴍᴇɴᴛᴀʟ ɪʟʟɴᴇꜱꜱ, ᴀʙᴜꜱᴇ, ᴇᴛᴄ. ⊹</li>
+        <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴅᴇꜰᴇɴᴅ ᴏʀ ᴇxᴄᴜꜱᴇ ᴘʀᴇᴅᴀᴛᴏʀʏ ʙᴇʜᴀᴠɪᴏʀ</li>
+        <li>ᴛᴄᴏᴀᴀʟ ꜰᴀɴꜱ (ɪꜰ ʏᴏᴜ’ʀᴇ ɪɴᴛᴏ ꜱᴏᴍᴇᴛʜɪɴɢ ᴛʜᴀᴛ ᴅɪꜱɢᴜꜱᴛɪɴɢ, ʏᴏᴜ ꜱᴇʀɪᴏᴜꜱʟʏ ɴᴇᴇᴅ ʜᴇʟᴘ) ⊹</li>
+        <li>ʜᴀᴢʙɪɴ ʜᴏᴛᴇʟ ᴀɴᴅ ʜᴇʟʟᴜᴠᴀ ʙᴏꜱꜱ ꜰᴀɴꜱ (ᴢ'ꜱ ᴀɴ ᴇxᴄᴇᴘᴛɪᴏɴ) ⊹</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="likes-modal" class="app-modal" onclick="closeModal(event, 'likes-modal')">
+    <div class="modal-card">
+      <span class="close-btn" onclick="document.getElementById('likes-modal').style.display='none'">×</span>
+      <h2><strong>𐙚 ʟɪᴋᴇꜱ ᵎᵎ</strong></h2>
+      <ul>
+        <li>ᴍʏ ᴄᴀᴛ ≽^- ˕ -^≼ ⊹</li>
+        <li>ᴘʟᴀʏɪɴɢ ʙᴀᴅᴍɪɴᴛᴏɴ ⊹</li>
+        <li>ɢᴀᴍɪɴɢ (ɪ ᴘʟᴀʏ ʀᴏʙʟᴏx, ɢᴇɴꜱʜɪɴ ɪᴍᴘᴀᴄᴛ, ᴀɴᴅ ᴘʀᴏᴊᴇᴄᴛ ꜱᴇᴋᴀɪ) ⊹</li>
+        <li>ᴋᴀʀᴀᴏᴋᴇ ⊹</li>
+        <li>ʀᴇᴀᴅɪɴɢ ⊹</li>
+        <li>ʟɪꜱᴛᴇɴɪɴɢ ᴛᴏ ᴍᴜꜱɪᴄ (ᴍᴏꜱᴛ ᴏꜰ ᴛʜᴇ ꜱᴏɴɢꜱ ɪ ʟɪꜱᴛᴇɴ ᴛᴏ ᴀʀᴇ ꜰʀᴏᴍ ᴘʜᴀɴᴛᴏᴍ ꜱɪɪᴛᴀ, ᴀᴅᴏ, ꜱʜᴇᴇɴᴀ ʀɪɴɢᴏ, ᴍᴀʟɪᴄᴇ ᴍɪᴢᴇʀ, ᴀɴᴅ ᴠᴏᴄᴀʟᴏɪᴅ) ⊹</li>
+        <li>ᴄᴏʟʟᴇᴄᴛɪɴɢ ꜰɪɢᴜʀᴇꜱ (ᴍɪᴋᴜ ꜰɪɢᴜʀᴇꜱ, ꜱᴀɴʀɪᴏ ꜰɪɢᴜʀɪɴᴇꜱ, ᴏʀ ꜰɪɢᴜʀᴇꜱ ᴏꜰ ᴍʏ ꜰᴀᴠ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ) ⊹</li>
+        <li>ᴡᴀᴛᴄʜɪɴɢ ᴀɴɪᴍᴇ (ɪ ʟᴏᴠᴇᴇᴇᴇ ʀᴏᴍᴀɴᴄᴇ ᴀɴɪᴍᴇꜱ) ⊹</li>
+        <li>ᴠᴀʀᴋᴀ 🤤 ⊹</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="dislikes-modal" class="app-modal" onclick="closeModal(event, 'dislikes-modal')">
+    <div class="modal-card">
+      <span class="close-btn" onclick="document.getElementById('dislikes-modal').style.display='none'">×</span>
+      <h2><strong>𐙚 ᴅɪꜱʟɪᴋᴇꜱ ᵎᵎ</strong></h2>
+      <ul>
+        <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ʀᴇᴀᴅ ᴍʏ ᴛᴇxᴛꜱ ʙᴜᴛ ᴛʜᴇʏ ᴅᴏɴ'ᴛ ʀᴇᴘʟʏ ⊹</li>
+        <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴀꜱᴋ ꜰᴏʀ ᴀᴅᴠɪᴄᴇ ʙᴜᴛ ᴇxᴘᴇᴄᴛ ᴍᴇ ᴛᴏ ꜱᴜɢᴀʀᴄᴏᴀᴛ ᴇᴠᴇʀʏᴛʜɪɴɢ ɪɴꜱᴛᴇᴀᴅ ᴏꜰ ʙᴇɪɴɢ ʜᴏɴᴇꜱᴛ (ᴛʜɪꜱ ɪꜱ ᴛᴀʀɢᴇᴛᴇᴅ ᴛᴏ ꜱᴏᴍᴇᴏɴᴇ) ⊹</li>
+        <li>ᴘᴇᴏᴘʟᴇ ᴛᴀʟᴋɪɴɢ ᴏᴠᴇʀ ᴍᴇ ɪɴ ᴄᴏɴᴠᴇʀꜱᴀᴛɪᴏɴꜱ ⊹</li>
+        <li>ᴘᴇᴏᴘʟᴇ ᴡʜᴏ ᴀʀᴇ ʙᴇɪɴɢ ʟᴏᴜᴅ ʙᴜᴛ ᴄᴀɴ’ᴛ ꜱᴛᴀɴᴅ ɪᴛ ᴡʜᴇɴ ᴏᴛʜᴇʀꜱ ᴅᴏ ᴛʜᴇ ꜱᴀᴍᴇ (ᴛʜɪꜱ ɪꜱ ᴛᴀʀɢᴇᴛᴇᴅ ᴛᴏ ꜱᴏᴍᴇᴏɴᴇ ᴛᴏᴏ) ⊹</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="accounts-modal" class="app-modal" onclick="closeModal(event, 'accounts-modal')">
+    <div class="modal-card">
+      <span class="close-btn" onclick="document.getElementById('accounts-modal').style.display='none'">×</span>
+      <center><h3><strong>˚₊‧ 𓊆ᴍʏ ᴀᴄᴄᴏᴜɴᴛꜱ𓊇 ‧₊˚</strong></h3>
       <p>
         <a href="https://www.roblox.com/users/1504565696/profile" target="_blank" rel="noopener noreferrer">ʀᴏʙʟᴏx ᴀᴄᴄᴏᴜɴᴛ</a> ♡
         <a href="https://www.tiktok.com/@rose_theflowerr" target="_blank" rel="noopener noreferrer">ᴛɪᴋᴛᴏᴋ ᴀᴄᴄᴏᴜɴᴛ</a> ♡
         <a href="https://www.instagram.com/raena_jai/" target="_blank" rel="noopener noreferrer">ɪɴꜱᴛᴀɢʀᴀᴍ ᴀᴄᴄᴏᴜɴᴛ</a>
       </p></center>
-    </section>
+    </div>
   </div>
+
+  <script>
+    const trackList = [
+      { title: "Otomodachi", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/dc/d5/bb/dcd5bb1f23ee068e51adc141c01f87b9.jpg", url: "otomodachi.mp3" },
+      { title: "Just Wanna XXXX With You", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/2b/08/17/2b08179f9ef7d9dfb349dd92b05f9a51.jpg", url: "just wanna xxxx with you.mp3" },
+      { title: "Devilish Girl", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/b9/20/a5/b920a58ffb3e30ba9013a8305c7c04ff.jpg", url: "devilish girl.mp3" },
+      { title: "Conflicting", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/a2/24/d3/a224d320f828312c5b48442fe956a4a3.jpg", url: "conflicting.mp3" },
+      { title: "Hanabami", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/83/53/02/835302abfb1de5ca4436ce83b60e5181.jpg", url: "hanabami.mp3" },
+      { title: "Hanagatami", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/31/eb/1d/31eb1d25b0f74c354385302c38f0c842.jpg", url: "hanagatami.mp3" },
+      { title: "Zoku Zoku", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/b2/56/9d/b2569d15d8bd2939b2a1dd8d15d30546.jpg", url: "zoku zoku.mp3" },
+      { title: "Suki, Kirai", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/fb/59/1e/fb591e2c6f00d71d21ec1156904a7cb4.jpg", url: "suki, kirai.mp3" },
+      { title: "Doppleganger", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/fb/59/1e/fb591e2c6f00d71d21ec1156904a7cb4.jpg", url: "doppleganger.mp3" },
+      { title: "Noah", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/aa/ee/5e/aaee5e7f1af25ad0b86af6ccb5f0169b.jpg", url: "noah.mp3" },
+      { title: "Bot Bakka", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/98/eb/a8/98eba80c0f4bbb1076d9fe3bc4ed256f.jpg", url: "bot bakka.mp3" },
+      { title: "Rose-Colored Moon", artist: "Phantom Siita", cover: "https://i.pinimg.com/1200x/ce/0f/e8/ce0fe8b3739a3e64abd93b6d9a7cdf3c.jpg", url: "rose-colored moon.mp3" },
+      { title: "Mo-ii-Kai?", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/c1/db/10/c1db10db24b29383b8f4a4829e954b88.jpg", url: "mo-ii-kai?.mp3" },
+      { title: "Horror Queen", artist: "Phantom Siita", cover: "https://i.pinimg.com/736x/f9/e8/64/f9e8646d0fa054cf6426910f89463285.jpg", url: "horror queen.mp3" }
+    ];
+
+    let currentTrackIndex = 0;
+    const audioNode = document.getElementById('main-audio');
+    const playBtnNode = document.getElementById('play-trigger-btn');
+    const sliderNode = document.getElementById('audio-slider');
+
+    function loadTrack(index) {
+      const track = trackList[index];
+      document.getElementById('player-title').innerText = track.title;
+      document.getElementById('player-artist').innerText = track.artist;
+      document.getElementById('player-cover').src = track.cover;
+      audioNode.src = track.url;
+      sliderNode.value = 0; 
+      // Reset tracking bar timestamps when a new track loads
+      document.getElementById('current-time').innerText = "0:00";
+      document.getElementById('total-duration').innerText = "0:00";
+    }
+
+    function togglePlayback() {
+      if (audioNode.paused) {
+        audioNode.play();
+        playBtnNode.innerText = "⏸";
+      } else {
+        audioNode.pause();
+        playBtnNode.innerText = "▶";
+      }
+    }
+
+    function nextTrack() {
+      currentTrackIndex = (currentTrackIndex + 1) % trackList.length;
+      loadTrack(currentTrackIndex);
+      audioNode.play();
+      playBtnNode.innerText = "⏸";
+    }
+
+    function prevTrack() {
+      currentTrackIndex = (currentTrackIndex - 1 + trackList.length) % trackList.length;
+      loadTrack(currentTrackIndex);
+      audioNode.play();
+      playBtnNode.innerText = "⏸";
+    }
+
+    const dockLayouts = {
+      phone: `
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-1"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-2"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-3"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-4"></div></div>
+      `,
+      ipad: `
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-1"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-2"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-3"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-4"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-5"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-6"></div></div>
+      `,
+      desktop: `
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-1"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-2"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-3"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-4"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-5"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-6"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-7"></div></div>
+        <div class="dock-item-wrapper deco-only"><div class="app-square dock-img-8"></div></div>
+      `
+    };
+
+    function setDevice(deviceType) {
+      document.getElementById('device-selector').classList.add('d-none');
+      document.getElementById('webpage-container').classList.remove('d-none');
+      
+      const frame = document.getElementById('device-frame');
+      frame.className = ''; 
+      frame.classList.add('device-' + deviceType);
+
+      document.getElementById('dynamic-dock-target').innerHTML = dockLayouts[deviceType];
+      
+      loadTrack(currentTrackIndex);
+    }
+
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeModal(event, id) {
+      if (event.target === document.getElementById(id)) {
+        document.getElementById(id).style.display = 'none';
+      }
+    }
+
+    function formatTime(secs) {
+      if (isNaN(secs)) return "0:00";
+      const minutes = Math.floor(secs / 60);
+      const seconds = Math.floor(secs % 60);
+      return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }
+
+    // SLIDER & STREAM AUTO-ADVANCE MANAGEMENT ENGINE WITH TIMESTAMPS
+    audioNode.addEventListener('timeupdate', () => {
+      if (audioNode.duration) {
+        sliderNode.value = (audioNode.currentTime / audioNode.duration) * 100;
+        
+        document.getElementById('current-time').innerText = formatTime(audioNode.currentTime);
+        document.getElementById('total-duration').innerText = formatTime(audioNode.duration);
+      }
+    });
+
+    sliderNode.addEventListener('input', () => {
+      if (audioNode.duration) {
+        audioNode.currentTime = (sliderNode.value / 100) * audioNode.duration;
+      }
+    });
+
+    audioNode.addEventListener('ended', () => {
+      nextTrack();
+    });
+
+    // REAL-TIME CLOCK LOGIC
+    function updateLiveClocks() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      
+      // Convert to 12-hour format
+      hours = hours % 12;
+      hours = hours ? hours : 12; 
+      
+      const cleanMinutes = minutes < 10 ? '0' + minutes : minutes;
+      
+      const timeString = hours + ':' + cleanMinutes + ' ' + ampm + ' 𐙚';
+      
+      const deviceClock = document.getElementById('live-clock');
+      const desktopClock = document.getElementById('live-desktop-clock');
+      
+      if(deviceClock) deviceClock.innerText = timeString;
+      if(desktopClock) desktopClock.innerText = hours + ':' + cleanMinutes + ' ' + ampm + ' 𐙚 📶 🔋';
+    }
+
+    updateLiveClocks();
+    setInterval(updateLiveClocks, 1000);
+  </script>
 </body>
 </html>
